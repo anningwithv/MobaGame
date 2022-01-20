@@ -6,3 +6,6 @@ MobileGame/Logs/
 MobileGame/.vsconfig
 MobileGame/Assembly-CSharp.csproj
 MobileGame/MobileGame.sln
+MobileServer/.vs/
+MobileServer/MobileServer/bin/
+MobileServer/MobileServer/obj/
