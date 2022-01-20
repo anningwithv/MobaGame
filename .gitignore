@@ -1,0 +1,8 @@
+MobileGame/.vs/
+MobileGame/Library/
+MobileGame/Temp/
+MobileGame/obj/
+MobileGame/Logs/
+MobileGame/.vsconfig
+MobileGame/Assembly-CSharp.csproj
+MobileGame/MobileGame.sln
