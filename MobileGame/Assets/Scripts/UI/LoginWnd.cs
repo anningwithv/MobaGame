@@ -1,4 +1,5 @@
-﻿using UnityEngine.UI;
+﻿using MobileProtocol;
+using UnityEngine.UI;
 
 public class LoginWnd : WindowRoot
 {
@@ -18,13 +19,28 @@ public class LoginWnd : WindowRoot
     public void ClickLoginBtn()
     {
         audioSvc.PlayUIAudio("loginBtnClick");
-        if(iptAcct.text.Length >= 3 && iptPass.text.Length >= 3) {
-            //TODO 发送网络消息，请求登录服务器
-            root.AddTips("请求登录");
+        if(iptAcct.text.Length >= 3 && iptPass.text.Length >= 3)
+        {
+            HOKMsg msg = new HOKMsg
+            {
+                cmd = CMD.ReqLogin,
+                reqLogin = new ReqLogin
+                {
+                    acct = iptAcct.text,
+                    pass = iptPass.text
+                }
+            };
+            netSvc.SendMsg(msg, (bool result) => {
+                if (result == false)
+                {
+                    netSvc.InitSvc();
+                }
+            });
         }
-        else {
+        else
+        {
             //POP Tips
-            root.AddTips("账号或密码为空");
+            root.ShowTips("账号或密码为空");
         }
     }
 }

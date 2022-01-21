@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0335D376-1F10-4C40-A672-6D07A5100EEF}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>MobileServer</RootNamespace>
-    <AssemblyName>MobileServer</AssemblyName>
+    <ProjectGuid>{86CCA1D8-7F80-41AF-ACA7-18D1FDABA44E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MobileProtocol</RootNamespace>
+    <AssemblyName>MobileProtocol</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,19 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Kcp">
-      <HintPath>Libs\Kcp.dll</HintPath>
-    </Reference>
-    <Reference Include="KCPNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Libs\KCPNet.dll</HintPath>
-    </Reference>
-    <Reference Include="MobileProtocol, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\MobileProtocol\bin\Debug\MobileProtocol.dll</HintPath>
-    </Reference>
-    <Reference Include="PEUtils">
-      <HintPath>Libs\PEUtils.dll</HintPath>
+    <Reference Include="KCPNet">
+      <HintPath>..\MobileServer\Libs\KCPNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -57,25 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="NetMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scripts\Common\ServerRoot.cs" />
-    <Compile Include="Scripts\Common\ServerStart.cs" />
-    <Compile Include="Scripts\Common\Singleton.cs" />
-    <Compile Include="Scripts\Common\SystemRoot.cs" />
-    <Compile Include="Scripts\Service\CacheSvc.cs" />
-    <Compile Include="Scripts\Service\NetService\NetSvc.cs" />
-    <Compile Include="Scripts\Service\NetService\ServerSession.cs" />
-    <Compile Include="Scripts\Service\TimerSvc.cs" />
-    <Compile Include="Scripts\System\LoginSys.cs" />
-    <Compile Include="Scripts\System\MatchSys.cs" />
-    <Compile Include="Scripts\System\RoomSystem\PVPRoom.cs" />
-    <Compile Include="Scripts\System\RoomSystem\RoomSys.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Libs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -9,3 +9,5 @@ MobileGame/MobileGame.sln
 MobileServer/.vs/
 MobileServer/MobileServer/bin/
 MobileServer/MobileServer/obj/
+MobileServer/MobileProtocol/bin/
+MobileServer/MobileProtocol/obj/
